@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/accesoPerm.css}">
+</head>
+<body>
+<div id="cuadro">
+    <div class="numero">2</div>
+    <h1>Control de acceso</h1>
+    <img th:src="@{/img/194331.png}" class="img">
+    <div class="mensaje" th:if="${resultado}">
+        <span th:text="${resultado}"></span>
+    </div>
+    <button class="boton">ACEPTAR ✔</button>
+</div>
+
+</body>
+</html>

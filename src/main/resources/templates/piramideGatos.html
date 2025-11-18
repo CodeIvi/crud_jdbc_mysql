@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Piramide Gatos</title>
+    <link rel="stylesheet" th:href="@{/css/estiloPiramide.css}">
+</head>
+<body>
+
+<div class="piramide" th:if="${repeticiones}">
+    <div th:each="fila : ${repeticiones}">
+        <!-- espacios -->
+        <span th:each="espacio : ${#numbers.sequence(1, altura - fila)}">&nbsp;</span>
+
+        <!-- imágenes -->
+        <span th:each="img : ${#numbers.sequence(1, 2 * fila - 1)}">
+            <img th:src="@{/img/gato.png}" alt="*" class="icono"/>
+        </span>
+        <br/>
+    </div>
+</div>
+
+</body>
+</html>

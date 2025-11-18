@@ -1,5 +1,5 @@
 create database crud_jdbc_project;
-
+use crud_jdbc_project;
 create table user
 (
     username varchar(100) not null,

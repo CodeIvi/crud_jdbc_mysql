@@ -45,7 +45,7 @@ class CrudJdbcProjectApplicationTests {
                 .build();
         userDAO.create(user);
 
-        Assertions.assertTrue(user.getId()>0;
+        Assertions.assertTrue(user.getId()>0);
 
 
     }

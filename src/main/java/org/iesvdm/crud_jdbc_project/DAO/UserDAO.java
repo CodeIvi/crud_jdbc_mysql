@@ -2,6 +2,8 @@ package org.iesvdm.crud_jdbc_project.DAO;
 
 import org.iesvdm.crud_jdbc_project.model.User;
 
+import java.util.List;
+
 public interface UserDAO {
 
     User create(User user);
@@ -17,6 +19,9 @@ public interface UserDAO {
      * @param username unico en base de datos
      */
     User findByUsername(String username);
+
+    List<User> getAll();
 }
+
 
 

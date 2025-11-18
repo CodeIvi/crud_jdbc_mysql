@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Control de acceso</title>
+    <link rel="stylesheet" th:href="@{/css/loginEstilo.css}">
+</head>
+<body>
+<div id="cuadro">
+    <div class="numero">1</div>
+    <h1>Control de acceso</h1>
+
+    <form th:action="@{/logIn}" th:object="${user}" method="post">
+
+        <div class="campo">
+            <label for="user">Nombre de usuario</label>
+            <input type="text" id="user" th:field="*{username}">
+        </div>
+        <div class="campo">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" th:field="*{password}">
+        </div>
+        <button class="boton">ACEPTAR ✔</button>
+    </form>
+
+    <div class="mensaje" th:if="${resultado}">
+        <span th:text="${resultado}"></span>
+    </div>
+</div>
