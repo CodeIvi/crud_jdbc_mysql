@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagina Admin</title>
+    <link rel="stylesheet" th:href="@{/css/pagaAdmin.css}">
+</head>
+<body>
+    <h1>Admin</h1>
+    <table>
+
+        <tr>
+            <td>Nombre</td>
+            <td>Usuario</td>
+        </tr>
+
+        <tr th:each="user: ${usuarios}">
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.password}"></td>
+        </tr>
+
+   </table>
+
+    <form th:action="@{/pagadmin}" th:object="${usuario}" method="post">
+        <div>
+            <input type="text" th:field="*{username}">
+        </div>
+        <div>
+            <input type="password" th:field="*{password}">
+        </div>
+
+        <button>Aceptar</button>
+    </form>
+
+    <div th:if="${resultado}">
+        <span th:text="${resultado}"></span>
+    </div>
+
+
+</body>
+</html>

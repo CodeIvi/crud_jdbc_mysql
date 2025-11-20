@@ -27,8 +27,8 @@ public class UserDAOImplSQL implements UserDAO{
     public User create(User user) {
 
         String sql = """
-               insert into user(username,password)
-               values(       ?,          ?) 
+               insert into user(username,password,admin)
+               values(       ?,          ?,          ?) 
                """;
         String[] ids = {"id"};
 
@@ -39,6 +39,8 @@ public class UserDAOImplSQL implements UserDAO{
 
             ps.setString(1,user.getUsername());
             ps.setString(2,user.getPassword());
+            ps.setBoolean(3,user.isAdmin());
+
 
             return ps;
 
@@ -76,7 +78,8 @@ public class UserDAOImplSQL implements UserDAO{
                 (rs, rowNum) -> new User(
                         rs.getLong("id"),
                         rs.getString("username"),
-                        rs.getString("password"))
+                        rs.getString("password"),
+                        rs.getBoolean("admin"))
 
         );
 

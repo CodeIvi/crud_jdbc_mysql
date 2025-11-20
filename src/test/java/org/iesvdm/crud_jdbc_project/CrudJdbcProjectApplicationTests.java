@@ -26,8 +26,9 @@ class CrudJdbcProjectApplicationTests {
 
     @Test
     void createUserTest() {
-        String username = "jose";
-        String password = "123456";
+        String username = "Juan";
+        String password = "12345";
+        boolean isAdmin = true;
 
         String passwordHashed = null;
 
@@ -42,6 +43,7 @@ class CrudJdbcProjectApplicationTests {
         User user = User.builder()
                 .username(username)
                 .password(passwordHashed)
+                .isAdmin(isAdmin)
                 .build();
         userDAO.create(user);
 

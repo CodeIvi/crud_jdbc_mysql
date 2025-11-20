@@ -10,8 +10,6 @@ import java.util.List;
 
 @Service
 public class UserService {
-
-    @Autowired
     private UserDAO userDAO;
 
     public UserService(UserDAO userDAO){
@@ -19,7 +17,19 @@ public class UserService {
     }
 
     public List<User> listUsers(){
+
         return userDAO.getAll();
+    }
+
+    public User findByUsername(String username){
+        User user = userDAO.findByUsername(username);
+
+        return user;
+    }
+
+    public User nuevoUsuario(User usuario){
+
+        return userDAO.create(usuario);
     }
 
 

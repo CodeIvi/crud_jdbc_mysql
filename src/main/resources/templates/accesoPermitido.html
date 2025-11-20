@@ -13,8 +13,16 @@
     <div class="mensaje" th:if="${resultado}">
         <span th:text="${resultado}"></span>
     </div>
-    <button class="boton">ACEPTAR ✔</button>
+
+    <form th:action="controlacceso" method="get">
+        <button class="boton">ACEPTAR ✔</button>
+    </form>
+
+
+    <a href="/piramide"><button>Aceptar</button></a>
 </div>
+
+
 
 </body>
 </html>
